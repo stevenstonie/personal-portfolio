@@ -53,16 +53,16 @@ const IndividualDoc: React.FC<Doc & { alignment: "left" | "right" }> = (doc) => 
 
 	return (
 		<div ref={ref} style={{ textAlign: doc.alignment, position: "relative" }}>
-			<section className={`${styles.visible_doc_section} ${isCentered ? styles.highlight : ""}`}>
-				<img
-					className={styles.document_thumbnail}
-					src={doc.thumbnail}
-					alt={doc.certificationName}
-				/>
-				<h2 style={{ fontWeight: "bold" }}>{doc.certificationName}</h2>
-				<p>by {doc.issuer}</p>
-				<p>({doc.issueDate})</p>
-			</section>
+			<article className={`${styles.visible_doc_section} ${isCentered ? styles.highlight : ""}`}>
+                <img
+                    className={styles.document_thumbnail}
+                    src={doc.thumbnail}
+                    alt={doc.certificationName}
+                />
+                <h3 style={{ fontWeight: "bold" }}>{doc.certificationName}</h3>
+                <p>by {doc.issuer}</p>
+                <p>({doc.issueDate})</p>
+            </article>
 
 			<div className={`${styles.doc_details_popup} ${positionOfPopup} ${visibilityOfPopup}`}>
 

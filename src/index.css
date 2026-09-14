@@ -26,18 +26,18 @@
 }
 
 p {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
 
   @media (max-width: 700px) {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 }
 
 li {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 
   @media (max-width: 700px) {
-    font-size: .9rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -60,9 +60,22 @@ html {
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   line-height: 1.1;
   margin: 2rem auto;
+
+  @media (max-width: 700px) {
+    font-size: 2.8rem;
+  }
+}
+
+h3 {
+  font-size: 3rem;
+  margin: 1rem auto;
+
+  @media (max-width: 700px) {
+    font-size: 2.2rem;
+  }
 }
 
 .centered-x-axis {

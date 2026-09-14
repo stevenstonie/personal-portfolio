@@ -4,12 +4,10 @@ import TextScramble from "@twistezo/react-text-scramble/lib/TextScramble";
 import { useTypewriterEffect } from "../../funcs/TypewriterEffect";
 
 const typewriterTextList = [
-	{ text: "Fullstack Developer", color: "orange" },
-	{ text: "Application Developer", color: "blue" },
-	{ text: "Database Administrator", color: "green" },
-	{ text: "Security Engineer", color: "red" },
-	{ text: "QA Engineer", color: "grey" },
-	{ text: "Project Manager", color: "yellow" }
+	{ text: "DevSecOps Engineer", color: "red" },
+	{ text: "Backend Architect", color: "orange" },
+	{ text: "Frontend Integrator", color: "green" },
+	{ text: "Software Developer", color: "blue" },
 ];
 const maxCharCount = Math.max(...typewriterTextList.map(item => item.text.length));
 
@@ -17,8 +15,8 @@ const Intro: React.FC = () => {
 	const helloText: ScrambleTexts = [
 		'Hello and welcome to my'
 	]
-	const portofolio: ScrambleTexts = [
-		'portofolio'
+	const portfolio: ScrambleTexts = [
+		'portfolio'
 	]
 	const { displayText, textColor } = useTypewriterEffect(typewriterTextList);
 
@@ -28,7 +26,7 @@ const Intro: React.FC = () => {
 	const hasSpace = words.length > 1;
 
 	return (
-		<section className={styles.intro_container}>
+		<div className={styles.intro_container}>
 			<div className={styles.inner_container}>
 				<div className={styles.p_text}>
 					<TextScramble
@@ -58,7 +56,7 @@ const Intro: React.FC = () => {
 
 				<div className={styles.p_text} style={{ textAlign: 'right' }}>
 					<TextScramble
-						texts={portofolio}
+						texts={portfolio}
 						letterSpeed={90}
 						nextLetterSpeed={150}
 						paused={false}
@@ -67,7 +65,7 @@ const Intro: React.FC = () => {
 				</div>
 
 			</div>
-		</section>
+		</div>
 	);
 };
 

@@ -7,6 +7,8 @@ import Contact from './main-sections/Contact/Contact'
 import More from './main-sections/More/More'
 import "./App.css";
 
+let currentYear: string = new Date().getFullYear().toString();
+
 function App(): JSX.Element {
   return (
     <>
@@ -30,14 +32,17 @@ function App(): JSX.Element {
         <section className="centered-x-axis" id="more">
           <More />
         </section>
-        <section className="centered-x-axis" id="contact">
+        <section style={{ margin: '0 var(--navbar-width) 0 var(--navbar-width)' }} className="centered-x-axis" id="contact">
           <Contact />
         </section>
-        <section style={{ marginTop: '40vh' }} className="centered-x-axis" id="footer">
+        <section style={{ marginTop: '30vh', marginBottom: '1rem' }} className="centered-x-axis" id="footer">
           <div className="footer">
+
             <a href="https://http.cat/418" target="_blank" rel="noopener noreferrer">
               <p>☕</p>
             </a>
+
+            <small>&copy; {currentYear} All rights reserved.</small>
           </div>
         </section>
       </main>

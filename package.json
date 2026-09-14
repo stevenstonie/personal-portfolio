@@ -1,9 +1,9 @@
 {
-  "name": "personal-portofolio",
+  "name": "personal-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://stevenstonie.github.io/personal-portofolio/",
+  "homepage": "https://stevenstonie.github.io/personal-portfolio/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",

@@ -14,8 +14,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
 	return (
 		<>
 			<div className={styles.modal_background} onClick={onClose}></div>
-			<div className={`${styles.modal_window} ${styles.slide_up}`}>
-				<h1>{project.title}</h1>
+			<div
+				className={`${styles.modal_window} ${styles.slide_up}`}
+				role="dialog"
+				aria-modal="true"
+				aria-labelledby="modal-title"
+			>
+				<h3 id="modal-title">{project.title}</h3>
+
 				<section className={styles.project_details}>
 					{project.mainDescription && (
 						<div
@@ -30,11 +36,15 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
 						/>
 					)}
 				</section>
+
 				<ul className={styles.image_list}>
-					{project.images?.map((img) => (
+					{project.images?.map((img, index) => (
 						<li key={img}>
 							<a href={img} target="_blank" rel="noopener noreferrer">
-								<img src={img} alt="Project image" />
+								<img
+									src={img}
+									alt={`${project.title} screenshot ${index + 1}`}
+								/>
 							</a>
 						</li>
 					))}

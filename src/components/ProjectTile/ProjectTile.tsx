@@ -10,6 +10,19 @@ interface ProjectTileProps {
 const ProjectTile: React.FC<ProjectTileProps> = ({ project, onClick }) => {
 	const hitboxRef = useRef<HTMLButtonElement>(null);
 	const cardRef = useRef<HTMLDivElement>(null);
+	const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+	const handleMouseEnter = () => {
+		if (!cardRef.current) return;
+
+		cardRef.current.style.transition = 'transform 0.1s ease-out';
+
+		timeoutRef.current = setTimeout(() => {
+			if (cardRef.current) {
+				cardRef.current.style.transition = 'none';
+			}
+		}, 300);
+	};
 
 	const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
 		if (!hitboxRef.current || !cardRef.current) return;
@@ -28,13 +41,11 @@ const ProjectTile: React.FC<ProjectTileProps> = ({ project, onClick }) => {
 		cardRef.current.style.setProperty('--ry', `${rotateY}deg`);
 	};
 
-	const handleMouseEnter = () => {
-		if (!cardRef.current) return;
-		cardRef.current.style.transition = 'none';
-	};
-
 	const handleMouseLeave = () => {
+		// prevent the timeout from stripping the transition if leaving early
+		if (timeoutRef.current) clearTimeout(timeoutRef.current);
 		if (!cardRef.current) return;
+
 		cardRef.current.style.transition = 'transform 0.5s ease';
 		cardRef.current.style.setProperty('--rx', '0deg');
 		cardRef.current.style.setProperty('--ry', '0deg');
@@ -46,13 +57,13 @@ const ProjectTile: React.FC<ProjectTileProps> = ({ project, onClick }) => {
 			ref={hitboxRef}
 			className={styles.project_tile_hitbox}
 			onClick={onClick}
-			onMouseMove={handleMouseMove}
 			onMouseEnter={handleMouseEnter}
+			onMouseMove={handleMouseMove}
 			onMouseLeave={handleMouseLeave}
 		>
 			<div ref={cardRef} className={styles.project_tile_inner}>
 				<img
-					src={project.thumbnail ? project.thumbnail : "./assets/images/projects/default-thumbnail.png"}
+					src={project.thumbnail ? project.thumbnail : "/assets/images/projects/default-thumbnail.png"}
 					alt={project.title}
 					className={styles.thumbnail_img}
 				/>

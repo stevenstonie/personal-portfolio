@@ -1,0 +1,17 @@
+.you_can_reach_me_at {
+    font-size: 1.8rem;
+
+    @media (max-width: 500px) {
+        font-size: 1.4rem;
+    }
+
+    overflow-wrap: break-word;
+}
+
+.also_check_out_my_gh_page {
+    font-size: 1.5rem;
+
+    @media (max-width: 500px) {
+        font-size: 1.1rem;
+    }
+}

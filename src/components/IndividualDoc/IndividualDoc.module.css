@@ -8,13 +8,19 @@
 }
 
 .visible_doc_section {
-	opacity: .3;
-	transition: opacity .3s ease;
+    opacity: .3;
+    transition: opacity .3s ease;
+    display: inline-block;
+    width: 100%;
 
-	h2,
-	p {
-		margin: 0;
-	}
+    h3,
+    p {
+        margin: 0;
+    }
+
+    @media (min-width: 700px) {
+        max-width: 30vw;
+    }
 }
 
 .highlight {
