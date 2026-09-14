@@ -15,7 +15,9 @@ function App(): JSX.Element {
   useEffect(() => {
     const minimumDelay = new Promise(resolve => setTimeout(resolve, 800));
 
-    Promise.all([document.fonts.ready, minimumDelay]).then(() => {
+    const loadFonts = document.fonts.load('1rem "Alsina"');
+
+    Promise.all([loadFonts, minimumDelay]).then(() => {
       setIsReady(true);
     });
 

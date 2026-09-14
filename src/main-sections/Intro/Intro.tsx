@@ -32,7 +32,7 @@ const Intro: React.FC = () => {
 					<TextScramble
 						texts={helloText}
 						letterSpeed={90}
-						nextLetterSpeed={80}
+						nextLetterSpeed={60}
 						paused={false}
 						pauseTime={15000000000}
 					/>
@@ -58,7 +58,7 @@ const Intro: React.FC = () => {
 					<TextScramble
 						texts={portfolio}
 						letterSpeed={90}
-						nextLetterSpeed={150}
+						nextLetterSpeed={100}
 						paused={false}
 						pauseTime={15000000000}
 					/>
