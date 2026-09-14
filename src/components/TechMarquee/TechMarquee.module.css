@@ -3,14 +3,6 @@
     --gap: 14px;
     --speed: 26s;
 
-    .srList {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        clip-path: inset(50%);
-    }
-
     .rail {
         display: flex;
         gap: var(--gap);

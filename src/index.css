@@ -55,6 +55,64 @@ body {
   margin: 0;
 }
 
+/** CURSORS --------------------------------------------------------------------------------------- */
+
+html,
+body,
+div,
+main,
+section {
+  cursor: url('/cursor.svg') 13 12, auto;
+}
+
+html:active,
+body:active,
+div:active,
+main:active,
+section:active {
+  cursor: url('/cursor-click.svg') 13 12, auto;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+li {
+  cursor: url('/cursor-text.svg') 20 20, text !important;
+}
+
+[class*="chip"],
+[class*="chip"] * {
+  cursor: url('/cursor.svg') 13 12, auto !important;
+  user-select: none !important;
+}
+
+a,
+span,
+button,
+[role="button"],
+a *,
+button *,
+[role="button"] * {
+  cursor: url('/pointer.svg') 20 6, pointer !important;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+button:active,
+span:active,
+button:active *,
+[role="button"]:active,
+[role="button"]:active * {
+  cursor: url('/pointer-tap.svg') 20 6, pointer !important;
+}
+
+/** --------------------------------------------------------------------------------------- */
+
 html {
   scroll-behavior: smooth;
 }

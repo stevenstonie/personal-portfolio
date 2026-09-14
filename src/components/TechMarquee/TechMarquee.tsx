@@ -56,7 +56,7 @@ const SAFE_ITEMS = new Array(multiplier)
 export default function TechMarquee() {
     return (
         <div className={styles.marqueeContainer}>
-            <ul className={styles.srList}>
+            <ul className='sr-only'>
                 {TECH_ITEMS_LIST.map((item) => (
                     <li key={item.name}>{item.name}</li>
                 ))}
@@ -71,7 +71,7 @@ export default function TechMarquee() {
                             style={{ '--hover-color': item.color } as React.CSSProperties}
                         >
                             <div className={styles.tile}>{item.icon}</div>
-                            {item.name}
+                            <span>{item.name}</span>
                         </div>
                     ))}
                 </div>
@@ -84,7 +84,7 @@ export default function TechMarquee() {
                             style={{ '--hover-color': item.color || '#57534e' } as React.CSSProperties}
                         >
                             <div className={styles.tile}>{item.icon}</div>
-                            {item.name}
+                            <span>{item.name}</span>
                         </div>
                     ))}
                 </div>

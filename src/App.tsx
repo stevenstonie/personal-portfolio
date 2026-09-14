@@ -21,7 +21,9 @@ function App(): JSX.Element {
 
     const failsafeTimeout = setTimeout(() => setIsReady(true), 2000);
 
-    return () => clearTimeout(failsafeTimeout);
+    return () => {
+      clearTimeout(failsafeTimeout);
+    };
   }, []);
 
   if (!isReady) {
