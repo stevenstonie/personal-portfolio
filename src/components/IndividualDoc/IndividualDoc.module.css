@@ -37,7 +37,7 @@
 	max-height: 400px;
 	border-radius: 10px;
 	background-color: var(--background-color);
-	border: 3px double var(--accent-color);
+	border: 3px double var(--primary-color);
 	opacity: 0;
 	pointer-events: none;
 	text-align: left;
@@ -70,9 +70,9 @@
 
 .scroll_arrow {
 	background-color: var(--background-color);
-	color: var(--accent-color);
+	color: var(--primary-color);
 	border: none;
-	border-bottom: 1px solid var(--accent-color);
+	border-bottom: 1px solid var(--primary-color);
 	width: 100%;
 	padding: 8px 0;
 	cursor: pointer;
@@ -86,7 +86,7 @@
 
 	&:last-of-type {
 		border-bottom: none;
-		border-top: 1px solid var(--accent-color);
+		border-top: 1px solid var(--primary-color);
 	}
 
 	&:disabled {

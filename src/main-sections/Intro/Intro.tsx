@@ -4,9 +4,9 @@ import TextScramble from "@twistezo/react-text-scramble/lib/TextScramble";
 import { useTypewriterEffect } from "../../funcs/TypewriterEffect";
 
 const typewriterTextList = [
-	{ text: "DevSecOps Engineer", color: "red" },
-	{ text: "Backend Architect", color: "orange" },
-	{ text: "Frontend Integrator", color: "green" },
+	{ text: "DevSecOps Engineer", color: "var(--primary-color)" },
+	{ text: "Backend Architect", color: "green" },
+	{ text: "Frontend Integrator", color: "red" },
 	{ text: "Software Developer", color: "blue" },
 ];
 const maxCharCount = Math.max(...typewriterTextList.map(item => item.text.length));
