@@ -1,7 +1,7 @@
 .marqueeContainer {
     width: 100%;
     --gap: 14px;
-    --speed: 26s;
+    --speed: 29s;
 
     .rail {
         display: flex;
