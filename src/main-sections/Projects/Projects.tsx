@@ -12,21 +12,19 @@ const Projects: React.FC = () => {
 	const [selectedId, setSelectedId] = useState<string | null>(null);
 
 	useEffect(() => {
-		const handleHashChange = () => {
+		const syncHash = () => {
 			const hash = window.location.hash;
 			if (hash.startsWith('#project-')) {
-				const id = hash.replace('#project-', '');
-				setSelectedId(id);
+				setSelectedId(hash.replace('#project-', ''));
 			} else {
 				setSelectedId(null);
 			}
 		};
 
-		// running it once on load just in case a refresh happens while a modal is open
-		handleHashChange();
+		syncHash();
+		window.addEventListener('hashchange', syncHash);
 
-		window.addEventListener('hashchange', handleHashChange);
-		return () => window.removeEventListener('hashchange', handleHashChange);
+		return () => window.removeEventListener('hashchange', syncHash);
 	}, []);
 
 	const openProject = (id: string | number) => {
@@ -34,8 +32,11 @@ const Projects: React.FC = () => {
 	};
 
 	const closeProject = () => {
-		window.history.pushState("", document.title, window.location.pathname + window.location.search);
-		setSelectedId(null);
+		if (window.location.hash.startsWith('#project-')) {
+			window.history.back();
+		} else {
+			setSelectedId(null);
+		}
 	};
 
 	return (

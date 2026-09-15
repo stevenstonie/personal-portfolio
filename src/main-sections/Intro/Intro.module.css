@@ -13,6 +13,18 @@
 	.p_text {
 		font-size: 1.9rem;
 		font-family: monospace, 'Courier New', Courier;
+
+		@media (max-width: 500px) {
+			font-size: 1.5rem;
+		}
+
+		@media (max-width: 450px) {
+			font-size: 1.3rem;
+		}
+
+		@media (max-width: 360px) {
+			font-size: 1.1rem;
+		}
 	}
 
 	.typewriter_wrapper {
@@ -22,10 +34,27 @@
 		white-space: normal;
 		font-size: 70px;
 		line-height: 1.2;
+
+		@media (min-width: 800px) {
+			min-width: var(--typewriter-char-count);
+		}
+
+		@media (max-width: 800px) {
+			min-height: 2.4em;
+		}
+
+		@media (max-width: 500px) {
+			font-size: 50px;
+		}
 	}
 
 	.magic_space::after {
 		content: " ";
+
+		@media (max-width: 800px) {
+			content: "\A";
+			white-space: pre;
+		}
 	}
 
 	.input_cursor {
@@ -36,40 +65,14 @@
 		margin-left: 8px;
 
 		animation: cf-bc-blink 1.5s steps(2, end) infinite;
-	}
 
-	@media (min-width: 800px) {
-		.typewriter_wrapper {
-			min-width: var(--typewriter-char-count);
-		}
-	}
-
-	@media (max-width: 800px) {
-		.typewriter_wrapper {
-			min-height: 2.4em;
-		}
-
-		.magic_space::after {
-			content: "\A";
-			white-space: pre;
-		}
-	}
-
-	@media (max-width: 500px) {
-		.typewriter_wrapper {
-			font-size: 50px;
-		}
-
-		.input_cursor {
+		@media (max-width: 500px) {
 			height: 50px;
-		}
-
-		.p_text {
-			font-size: 1.3rem;
 		}
 	}
 
 }
+
 @keyframes cf-bc-blink {
 
 	0%,

@@ -12,68 +12,81 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
 	const dialogRef = useRef<HTMLDialogElement>(null);
 
 	useEffect(() => {
-		if (isOpen && dialogRef.current) {
-			dialogRef.current.scrollTop = 0;
+		const dialog = dialogRef.current;
+		if (!dialog) return;
+
+		if (isOpen && !dialog.open) {
+			dialog.showModal();
+			dialog.scrollTop = 0;
+		} else if (!isOpen && dialog.open) {
+			dialog.close();
 		}
 	}, [isOpen]);
 
+	useEffect(() => {
+		const dialog = dialogRef.current;
+		if (!dialog) return;
+
+		const handleNativeClose = () => onClose();
+
+		const handleBackdropClick = (e: MouseEvent) => {
+			if (e.target === dialog) onClose();
+		};
+
+		dialog.addEventListener('close', handleNativeClose);
+		dialog.addEventListener('click', handleBackdropClick);
+
+		return () => {
+			dialog.removeEventListener('close', handleNativeClose);
+			dialog.removeEventListener('click', handleBackdropClick);
+		};
+	}, [onClose]);
+
 	return (
-		<>
-			{isOpen && (
-				<button
-					type="button"
-					className={styles.modal_background}
-					onClick={onClose}
-					aria-label="Close modal"
-				></button>
-			)}
+		<dialog
+			ref={dialogRef}
+			className={`${styles.modal_window} ${isOpen ? styles.slide_up : ''}`}
+			aria-labelledby={`modal-title-${project.id}`}
+			aria-modal="true"
+		>
+			<h3 id={`modal-title-${project.id}`}>{project.title}</h3>
 
-			<dialog
-				ref={dialogRef}
-				className={`${styles.modal_window} ${isOpen ? styles.slide_up : ''}`}
-				aria-labelledby={`modal-title-${project.id}`}
-				aria-modal="true"
-				open={isOpen}
-			>
-				<h3 id={`modal-title-${project.id}`}>{project.title}</h3>
+			<section className={styles.project_details}>
+				{project.mainDescription && (
+					<div
+						className={styles.project_description}
+						dangerouslySetInnerHTML={{ __html: project.mainDescription }}
+					/>
+				)}
+				{project.secondaryDescription && (
+					<div
+						className={styles.project_description}
+						dangerouslySetInnerHTML={{ __html: project.secondaryDescription }}
+					/>
+				)}
+				{project.thirdDescription && (
+					<div
+						className={styles.project_description}
+						dangerouslySetInnerHTML={{ __html: project.thirdDescription }}
+					/>
+				)}
+			</section>
 
-				<section className={styles.project_details}>
-					{project.mainDescription && (
-						<div
-							className={styles.project_description}
-							dangerouslySetInnerHTML={{ __html: project.mainDescription }}
-						/>
-					)}
-					{project.secondaryDescription && (
-						<div
-							className={styles.project_description}
-							dangerouslySetInnerHTML={{ __html: project.secondaryDescription }}
-						/>
-					)}
-					{project.thirdDescription && (
-						<div
-							className={styles.project_description}
-							dangerouslySetInnerHTML={{ __html: project.thirdDescription }}
-						/>
-					)}
-				</section>
-
-				<ul className={styles.image_list}>
-					{project.images?.map((img, index) => (
-						<li key={img}>
-							<a href={img} target="_blank" rel="noopener noreferrer">
-								<img
-									src={img}
-									alt={`${project.title} screenshot ${index + 1}`}
-									loading="lazy"
-									decoding="async"
-								/>
-							</a>
-						</li>
-					))}
-				</ul>
-			</dialog>
-		</>
+			<ul className={styles.image_list}>
+				{project.images?.map((img, index) => (
+					<li key={img}>
+						<a href={img} target="_blank" rel="noopener noreferrer">
+							<img
+								src={img}
+								alt={`${project.title} screenshot ${index + 1}`}
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+					</li>
+				))}
+			</ul>
+		</dialog>
 	);
 }
 
