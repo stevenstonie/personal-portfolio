@@ -1,38 +1,59 @@
+import { useRef, useEffect } from "react";
 import { Project } from "../../model/Project";
 import styles from "./ProjectModal.module.css";
 
 interface ProjectModalProps {
-	project: Project | null;
+	project: Project;
+	isOpen: boolean;
 	onClose: () => void;
 }
 
-const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
-	if (!project) {
-		return null;
-	}
+const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
+	const dialogRef = useRef<HTMLDialogElement>(null);
+
+	useEffect(() => {
+		if (isOpen && dialogRef.current) {
+			dialogRef.current.scrollTop = 0;
+		}
+	}, [isOpen]);
 
 	return (
 		<>
-			<div className={styles.modal_background} onClick={onClose}></div>
-			<div
-				className={`${styles.modal_window} ${styles.slide_up}`}
-				role="dialog"
+			{isOpen && (
+				<button
+					type="button"
+					className={styles.modal_background}
+					onClick={onClose}
+					aria-label="Close modal"
+				></button>
+			)}
+
+			<dialog
+				ref={dialogRef}
+				className={`${styles.modal_window} ${isOpen ? styles.slide_up : ''}`}
+				aria-labelledby={`modal-title-${project.id}`}
 				aria-modal="true"
-				aria-labelledby="modal-title"
+				open={isOpen}
 			>
-				<h3 id="modal-title">{project.title}</h3>
+				<h3 id={`modal-title-${project.id}`}>{project.title}</h3>
 
 				<section className={styles.project_details}>
 					{project.mainDescription && (
 						<div
-							className={styles.short_description}
+							className={styles.project_description}
 							dangerouslySetInnerHTML={{ __html: project.mainDescription }}
 						/>
 					)}
 					{project.secondaryDescription && (
 						<div
-							className={styles.long_description}
+							className={styles.project_description}
 							dangerouslySetInnerHTML={{ __html: project.secondaryDescription }}
+						/>
+					)}
+					{project.thirdDescription && (
+						<div
+							className={styles.project_description}
+							dangerouslySetInnerHTML={{ __html: project.thirdDescription }}
 						/>
 					)}
 				</section>
@@ -44,12 +65,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
 								<img
 									src={img}
 									alt={`${project.title} screenshot ${index + 1}`}
+									loading="lazy"
+									decoding="async"
 								/>
 							</a>
 						</li>
 					))}
 				</ul>
-			</div>
+			</dialog>
 		</>
 	);
 }

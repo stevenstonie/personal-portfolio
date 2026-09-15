@@ -1,5 +1,6 @@
 
 import styles from './TechMarquee.module.css';
+import androidIconPath from '@/assets/icons/svgs/android.svg';
 import angularIconPath from '@/assets/icons/svgs/angular.svg';
 import awsIconPath from '@/assets/icons/svgs/aws.svg';
 import cppIconPath from '@/assets/icons/svgs/cpp.svg';
@@ -10,6 +11,7 @@ import gcpIconPath from '@/assets/icons/svgs/gcp.svg';
 import javaIconPath from '@/assets/icons/svgs/java.svg';
 import nginxIconPath from '@/assets/icons/svgs/nginx.svg';
 import linuxIconPath from '@/assets/icons/svgs/linux.svg';
+import mysqlIconPath from '@/assets/icons/svgs/mysql.svg';
 import nodejsIconPath from '@/assets/icons/svgs/nodejs.svg';
 import postgresIconPath from '@/assets/icons/svgs/postgres.svg';
 import pythonIconPath from '@/assets/icons/svgs/python.svg';
@@ -35,10 +37,14 @@ const TECH_ITEMS_LIST = [
     { name: 'Amazon Web Services', color: '', icon: <img src={awsIconPath} alt="" /> },
     { name: 'Google Cloud Platform', color: '', icon: <img src={gcpIconPath} alt="" /> },
     // platforms^^
+    { name: 'Linux', color: '#F8BF11', icon: <img src={linuxIconPath} alt="" /> },
+    { name: 'Android', color: '#A4C639', icon: <img src={androidIconPath} alt="" /> },
+    // os's^^
+    { name: 'Postgres', color: '#336791', icon: <img src={postgresIconPath} alt="" /> },
+    { name: 'MySql', color: '#F8981D', icon: <img src={mysqlIconPath} alt="" /> },
+    // db's^^
     { name: 'Docker', color: '#2396ED', icon: <img src={dockerIconPath} alt="" /> },
     { name: 'nginx', color: '#009639', icon: <img src={nginxIconPath} alt="" /> },
-    { name: 'Linux', color: '#E6E6E6', icon: <img src={linuxIconPath} alt="" /> },
-    { name: 'Postgres', color: '#336791', icon: <img src={postgresIconPath} alt="" /> },
     // others^^
 ];
 

@@ -19,6 +19,7 @@
 	transform: translate(-50%, -50%);
 	height: var(--modal-height);
 	width: 70%;
+	color: inherit;
 	background-color: rgb(42, 42, 42);
 	border-radius: 8px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -27,7 +28,7 @@
 	z-index: 100;
 
 	@media screen and (max-width: 700px) {
-		width: 95%;
+		width: 85%;
 		height: calc(var(--modal-height) + (.1 * var(--modal-height)));
 	}
 
@@ -36,7 +37,7 @@
 
 		margin: 1.5rem;
 
-		.short_description {
+		.project_description {
 			font-size: 1.2rem;
 			margin-bottom: 1rem;
 		}
@@ -64,6 +65,7 @@
 }
 
 .slide_up {
+	will-change: transform, opacity;
 	animation: slideUpModal 0.4s cubic-bezier(0.4, 0.8, 0.2, 1) forwards;
 }
 

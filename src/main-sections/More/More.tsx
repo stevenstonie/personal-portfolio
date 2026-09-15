@@ -4,7 +4,7 @@ import styles from "./More.module.css";
 import { Doc } from "../../model/Doc";
 import TechMarquee from "../../components/TechMarquee/TechMarquee";
 
-const documents: Doc[] = documents_list as Doc[];
+const documents: Doc[] = [...documents_list].reverse() as Doc[];
 const alignments = documents.map((_, idx) => (idx % 2 === 0 ? "left" : "right"));
 
 

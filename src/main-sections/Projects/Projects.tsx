@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Project } from "../../model/Project";
 import ProjectTile from "../../components/ProjectTile/ProjectTile";
 import ProjectModal from "../../components/ProjectModal/ProjectModal";
@@ -9,19 +9,28 @@ import styles from "./Projects.module.css";
 const projects: Project[] = [...projects_list].reverse() as Project[];
 
 const Projects: React.FC = () => {
-	const [selected, setSelected] = useState<Project | null>(null);
+	const [selectedId, setSelectedId] = useState<string | number | null>(null);
 
 	return (
 		<section>
 			<h2>Personal projects</h2>
 			<div className={styles.contents_container}>
 				{projects.map((project) => (
-					<ProjectTile key={project.id} project={project} onClick={() => setSelected(project)} />
+					<Fragment key={project.id}>
+						<ProjectTile
+							project={project}
+							onClick={() => setSelectedId(project.id)}
+						/>
+						<ProjectModal
+							project={project}
+							isOpen={selectedId === project.id}
+							onClose={() => setSelectedId(null)}
+						/>
+					</Fragment>
 				))}
 			</div>
-			<ProjectModal project={selected} onClose={() => setSelected(null)} />
 		</section>
-	)
+	);
 }
 
 export default Projects

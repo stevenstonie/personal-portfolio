@@ -44,7 +44,6 @@ li {
 a {
   color: var(--primary-color);
   text-decoration: none;
-  font-weight: 600;
 
   &:hover {
     color: #fb9063;
@@ -56,6 +55,7 @@ body {
 }
 
 /** CURSORS --------------------------------------------------------------------------------------- */
+/* HERE: knowing that <a> items force the original pointer to appear when clicking, make sure the <a> items wrap a <span> of the text, since this workaround is good enough */
 
 html,
 body,

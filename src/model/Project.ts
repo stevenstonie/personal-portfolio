@@ -3,6 +3,7 @@ export interface Project {
 	title: string;
 	mainDescription: string;
 	secondaryDescription: string;
+	thirdDescription: string;
 	thumbnail: string;
 	images: string[];
 }

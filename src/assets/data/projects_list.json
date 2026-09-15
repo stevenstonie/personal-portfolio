@@ -2,8 +2,8 @@
 	{
 		"id": 1,
 		"title": "Music Player",
-		"mainDescription": "<p>A web-based music player application that allows users to listen to their favorite songs, create playlists, and customize their listening experience.</p>",
-		"secondaryDescription": "<p>The app has: <ul><li>its backend built with .NET to get the songs locally and serve an API with features like streaming songs, getting albums / artists, etc.</li><li>its frontend powered by Angular, which features an user-friendly interface</li></ul></p>",
+		"mainDescription": "<p>A web-based music player application that allows users to listen to their favorite songs, create playlists, and customize their listening experience.</p> <p>The app has:</p>",
+		"secondaryDescription": "<ul><li>its backend built with <strong>.NET Core</strong> to get the songs locally and serve an API with features like streaming songs, getting albums / artists, etc.</li><li>its frontend powered by <strong>Angular</strong>, which features an intuitive, user-friendly interface.</li></ul>",
 		"thumbnail": "./assets/images/projects/tsmusicplayer/thumbnail.png",
 		"images": [
 			"./assets/images/projects/tsmusicplayer/firstimage.png",
@@ -18,18 +18,18 @@
 		"images": [
 			"./assets/images/projects/codecluster/one.png",
 			"./assets/images/projects/codecluster/two.png",
+			"./assets/images/projects/codecluster/pushdown_automata.png",
 			"./assets/images/projects/codecluster/three.png",
 			"./assets/images/projects/codecluster/four.png",
 			"./assets/images/projects/codecluster/five.png",
-			"./assets/images/projects/codecluster/six.png",
-			"./assets/images/projects/codecluster/seven.png"
+			"./assets/images/projects/codecluster/six.png"
 		]
 	},
 	{
 		"id": 3,
 		"title": "iungOreal",
-		"mainDescription": "<p>A fullstack social media project where its name is a wordplay for 'going outside' (“iungo” means “to connect” in Latin) which aims to guide users into participating at outdoor events taking place in their city (marked on the integrated map) and share their experiences with others.</p> <p>Users can: post and comment on made posts, discuss in private / group / regional chats, update their profile to their liking and many other interactions just like in a typical social media website.</p>",
-		"secondaryDescription": "<p>The project is based on a microservice architecture, having as frameworks Spring Boot server-side and Angular client-side. Most notable tools used include: spring-boot-starter for productivity in: security, web, db management & development overall; JUnit, Mockito and H2 for unit and integration tests, awssdk to connect to a cloud service, stompjs for websocket connection and leaflet for implementation of the map.</p>",
+		"mainDescription": "<p>A microservice-based social platform designed to connect users with local outdoor events via interactive mapping (its name is a wordplay for 'going outside', where “iungo” means “to connect” in Latin).</p> <p>Users can: post and comment on made posts, discuss in private / group / regional chats, update their profile to their liking and many other useful interactions.</p>",
+		"secondaryDescription": "<ul><li>Core Architecture: Built using a <strong>Spring Boot</strong> server-side and <strong>Angular</strong> client-side architecture. Integrated <strong>Leaflet</strong> for dynamic spatial data and <strong>AWS SDK</strong> for cloud connection.</li><li>Real-Time Interaction: Created real-time communication protocols using <strong>StompJS</strong> WebSockets to support private, group, and regional chatting.</li><li>Quality & Security: Leveraged the <strong>spring-boot-starter</strong> ecosystem for robust security and database management, ensuring high reliability through comprehensive unit and integration testing with <strong>JUnit</strong>, <strong>Mockito</strong>, and an <strong>H2</strong> in-memory database.</li></ul>",
 		"thumbnail": "./assets/images/projects/iungoreal/thumbnail.png",
 		"images": [
 			"./assets/images/projects/iungoreal/1stimg.png",
@@ -40,8 +40,9 @@
 	{
 		"id": 4,
 		"title": "InfOpescuit V2",
-		"mainDescription": "<p>A desktop app which solves the mundane and error-prone way of taking reports of check-ins and check-outs for fishing lakes. InfOpescuit acts as a payment gateway, where the user scans barcodes of customer's cards to automate the process of writing data in excels and calculating revenue at closing.</p> <p>It improves the time taken to fill in excel data by hand by <span style=\"text-decoration: underline;\">at least 12 times</span> and it sees human errors occurring <span style=\"text-decoration: underline;\">less than about 20 times</span>, having less unnecesary room exposed and given the fact that navigation through the app is more pleasant to the eye.</p>",
-		"secondaryDescription": "<p>It is written in Python but compiled in C++ for faster speeds at runtime. The UI is done with Tkinter, OpenPyxl is used for excel manipulation, whereas Fernet, hmac, symmetric and asymmetric keys are applied for security purposes. Besides some other features it also includes conversion of tables to csv and xml (with custom mappings).</p>",
+		"mainDescription": "<p>This was the foundational desktop gateway built to solve the mundane, error-prone manual data entry for customer check-ins and end-of-day accounting at fishing lakes. It served as the initial, highly optimized payment and barcode-scanning engine distributed to lake managers.</p>",
+		"secondaryDescription": "<ul><li>Core Engine & UI: Developed a robust desktop application in <strong>Python</strong> (compiled in <strong>C++</strong> to strictly optimize runtime execution speeds), featuring a <strong>Tkinter</strong> interface designed to restrict unnecessary data exposure.</li><li>Automation & Security: Engineered an automated <strong>OpenPyxl</strong> reporting pipeline for custom .xlsx/XML generation. Secured operations using <strong>HMAC</strong>, <strong>asymmetric encryption keys</strong>, and <strong>JWTs</strong>.</li></ul>",
+		"thirdDescription": "<p>This foundational system replaced manual spreadsheet manipulation by the lake managers, accelerating data entry speeds by at least <strong>12 times</strong> and reducing human error rates by a factor of <strong>20</strong>. This massive operational upgrade proved the product's market value and justified the client's investment in the V3 cross-platform expansion.</p>",
 		"thumbnail": "./assets/images/projects/infopescuitv2/thumbnail.png",
 		"images": [
 			"./assets/images/projects/infopescuitv2/1.png",
@@ -55,22 +56,27 @@
 	{
 		"id": 5,
 		"title": "StreetArt Platform",
-		"mainDescription": "<p>A web platform designed for both mobile and desktop users, where artists can reserve performance venues and users can view events and their locations. </p> <p>Instead of lots of paperwork, everything is done through the platform, as a central place for everybody. It speeds up the whole process of booking venues, having a committee approve or decline artists, and its the best way of informing users in regard to artists in the area.</p>",
-		"secondaryDescription": "<p>Its backend is powered by Spring Boot, and frontend is built with Angular. Important technologies and tools used include:</p> <ul> <li>leaflet for the map functionality</li> <li>aws s3 as an object storage solution to add, remove and retrieve images used throughout the app</li> <li>firebase as an email verification service</li> <li>spring-security for authentication and authorization</li> <li>database management - is done through MySql for data storage and is implemented through spring data's jpa, amazon's rds being used as the cloud-hosted db solution</li> <li>deployment - has been done on a (docker-integrated) ubuntu virtual machine (provided by DigitalOcean). Microservices run on containers, while the client app has its static files served through an nginx reverse-proxy, which also handles request redirection, implements rate-limiting and switches to access by https. </li> <li>testing environment - currently consists of only unit tests: JUnit5+Mockito for backend (coverage stats provided through 'JaCoCo' plugin) and jasmine+Karma for frontend (coverage stats provided by Karma's istanbul). </li> </ul>",
+		"mainDescription": "<p>Event organizers needed to digitize a slow, heavily paper-based venue booking process. The goal was to build a centralized platform that allowed committees to efficiently approve street artists, while enabling citizens to easily discover live local events via interactive maps.</p>",
+		"secondaryDescription": "<ul><li>Backend & Database: Developed a secure booking API using <strong>Spring Boot</strong> and a <strong>MySQL</strong> database via <strong>JPA</strong> (hosted on <strong>AWS RDS</strong>), translating stakeholder requirements into a strict, role-based authorization system through <strong>Spring Security</strong>.</li><li>Frontend & Storage: Built an interactive <strong>Angular</strong> client featuring a <strong>Leaflet</strong> map integration and <strong>AWS S3</strong> as object storage to drive user discovery of local artists and venues.</li><li>Infrastructure: Designed a cost-effective, containerized infrastructure using <strong>Docker</strong> and deployed it on a <strong>DigitalOcean</strong> <strong>Ubuntu</strong> VM. Configured an <strong>nginx</strong> reverse-proxy to handle request redirection, HTTPS enforcement, and rate-limiting, balancing application performance needs with deployment budgets.</li><li>Quality Assurance: Guaranteed system stability by achieving high code coverage using <strong>JUnit 5</strong> / <strong>Mockito</strong> and <strong>Jasmine</strong> / <strong>Karma</strong>.</li></ul>",
+		"thirdDescription": "<p>This architecture successfully replaced a fragmented, manual pipeline with a highly available digital platform, accelerating the committee approval process and bridging the gap between local artists and their communities.</p>",
 		"thumbnail": "./assets/images/projects/streetart/thumbnail.png",
 		"images": [
-			"./assets/images/projects/streetart/1img.png",
-			"./assets/images/projects/streetart/2img.png",
-			"./assets/images/projects/streetart/3img.png",
-			"./assets/images/projects/streetart/4img.png",
-			"./assets/images/projects/streetart/5img.png"
+			"./assets/images/projects/streetart/intro_image.png",
+			"./assets/images/projects/streetart/map_example.png",
+			"./assets/images/projects/streetart/locations_and_performances.png",
+			"./assets/images/projects/streetart/artist_page.png",
+			"./assets/images/projects/streetart/branding_2.png",
+			"./assets/images/projects/streetart/color_scheme.png",
+			"./assets/images/projects/streetart/textblock_example.png",
+			"./assets/images/projects/streetart/project_management_board.png"
 		]
 	},
 	{
 		"id": 6,
 		"title": "InfOpescuit V3",
-		"mainDescription": "<p>The updated version of its predecessor, which feels more robust and less like a prototype. Designed fully local for both Computers and Android tablets, it does what version 2 does and much more. </p> <p>New functionalities include:</p> <ul><li>a sheet viewer for checking and changing data for excel sheets without leaving the application</li> <li>cash register integration when doing check-ins / check-outs</li> <li>new sheet integrations for promotions and reservations</li> <li>custom report data per lake</li> <li>language switching</li> <li>and many more</li></ul>",
-		"secondaryDescription": "<p>It is developed in Flutter, leveraging different libraries like: flutter_excel for doing operations on .xlsx files, trina_grid for rendering tables inside the app, barcode_widget to display barcodes as images, pasteboard to copy barcode images or taking snapshots of reports, etc.</p>",
+		"mainDescription": "<p>As the product outgrew the initial desktop application, the client required a highly maintainable, modern, and cross-platform ecosystem. The challenge was to deliver a significantly improved, intuitive user experience across both Windows and Android tablets, while expanding on the complex hardware and spreadsheet integrations established in the legacy system to support the diverse operational demands of various fishing lakes.</p>",
+		"secondaryDescription": "<ul><li>Cross-Platform Architecture: Engineered a scalable, next-generation application in <strong>Flutter</strong>, successfully modernizing the legacy UI and drastically reducing the client's future update and maintenance overhead across different operating systems.</li><li>Complex Data & Hardware Integration: Built sophisticated native spreadsheet manipulation (<strong>flutter_excel</strong>) and dynamic table rendering (<strong>trina_grid</strong>). Integrated barcode generation, allowing lake managers to instantly view, modify, and sync Excel sheets directly within the app's localized environment.</li><li>Dynamic Business Logic: Engineered modular POS flows, integrating real-time cash register synchronization during check-ins/outs. Developed highly configurable modules for membership fees, promotions and reservations to accommodate the lake managers' specific daily workflows.</li><li>Security Architecture: Migrated and maintained a strict, unified security posture, protecting application data and authentication flows using <strong>HMAC</strong>, <strong>asymmetric encryption keys</strong>, and <strong>JWTs</strong>.</li></ul>",
+		"thirdDescription": "<p>By successfully transitioning the product to this modern framework, the platform provides the client with a highly flexible, future-proof software product, while empowering the lake managers with a system that looks better, scales faster, and runs natively on any device they require.</p>",
 		"thumbnail": "./assets/images/projects/infopescuitv3/thumbnail.png",
 		"images": [
 			"./assets/images/projects/infopescuitv3/general_presentation.png",
@@ -82,8 +88,9 @@
 	{
 		"id": 7,
 		"title": "AsigurAZ",
-		"mainDescription": "<p>A cross-platform car insurance application built for Web, Android, and iOS. It features a straightforward, intuitive UI that simplifies the insurance process.</p> <p>Users can easily generate and compare custom offers and once a specific coverage option is chosen, the payment process unfolds. Active, paid policies become immediately accessible for viewing directly within the app, and a PDF copy is automatically dispatched to the user's email after a successful payment.</p> <p>The application can be found at: <a href=\"https://autoaaz.ro\" target=\"_blank\">https://autoaaz.ro</a>, or it can be downloaded from play store or app store.</p>",
-		"secondaryDescription": "<p>Technical Stack & Key Features:</p> <ul><li>Frontend: Built with Flutter for cross-platform deployment across Web, Android, and iOS.</li> <li>Backend & Infrastructure: Serverless Node.js environment hosted on Google Cloud Platform via Firebase.</li> <li>Security & Authentication: Secured using Firebase Authentication, App Check, and Secrets Manager.</li> <li>Payment Processing: Integrated with Netopia, handling transactions asynchronously via webhooks.</li> <li>Other features: Rate Limiting managed through an Upstash Redis database, Emails are dispatched using Mailtrap, etc.</li></ul>",
+		"mainDescription": "<p>Stakeholders needed a unified system to simplify the car insurance purchasing pipeline, requiring secure cross-platform access and fail-proof payment synchronization.</p>",
+		"secondaryDescription": "<ul><li>Frontend: Engineered a responsive, cross-platform user interface in <strong>Flutter</strong>, translating client usability requirements into a seamless multi-device experience.</li><li>Backend & Architecture: Orchestrated complex API synchronizations between a serverless <strong>Node.js</strong> / <strong>GCP</strong> backend, <strong>24Broker</strong>'s external server, <strong>Netopia</strong> payment webhooks, and <strong>Mailtrap</strong> for transactional emails, ensuring transactional reliability for external insurance policy generation.</li><li>AI & Data Extraction: Proposed and implemented a <strong>Gemini API</strong> OCR pipeline, resolving a major business bottleneck by automating data extraction and parsing of Romanian car registration certificates.</li><li>Security & Infrastructure: Aligned architecture with strict data privacy requirements by hardening endpoints via <strong>JWTs</strong>, <strong>App Check</strong>, and <strong>GCP Secrets Manager</strong>, mitigating abuse with <strong>Upstash Redis</strong> through rate limiting.</li></ul>",
+		"thirdDescription": "<p>The final application drastically reduced operational overhead for the brokers, while giving end-users a seamless, zero-friction way to buy and track policies directly from their devices.</p>",
 		"thumbnail": "./assets/images/projects/asiguraz/thumbnail.jpg",
 		"images": [
 			"./assets/images/projects/asiguraz/1.png",

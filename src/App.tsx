@@ -45,7 +45,7 @@ function App(): JSX.Element {
       <Navbar />
 
       <main className="main-page-container">
-        <h1 className='sr-only'>Developer with all-around expertise</h1>
+        <h1 className='sr-only'>Full-stack software engineer with all-around expertise</h1>
         <section style={{ height: '100svh' }} id="home">
           <Intro />
         </section>
@@ -69,7 +69,7 @@ function App(): JSX.Element {
           <div className="footer">
 
             <a href="https://http.cat/418" target="_blank" rel="noopener noreferrer">
-              <p>☕</p>
+              <p><small>☕</small></p>
             </a>
 
             <small>&copy; {currentYear} All rights reserved.</small>
